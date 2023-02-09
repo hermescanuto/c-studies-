@@ -1,18 +1,20 @@
 #include <iostream>
+#include "mylog.hpp"
 
+void start()
+{
+    MyLog mylog;
 
+    mylog.x = 1;
+    mylog.y = 2;
+
+    mylog.print();
+    std::cout << "Level:" << mylog.GetLevel() << std::endl;
+}
 
 int main()
 {
-    LOG log;
-
-    log.x = 1;
-    log.y = 2;
-
-    log.print();
-
     std::cout << "Main starts" << std::endl;
-    std::cout << log.GetLevel() << std::endl;
-
+    start();
     return 0;
 }
