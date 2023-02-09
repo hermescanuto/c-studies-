@@ -8,7 +8,7 @@ MyLog::MyLog()
     this->x = 0;
     this->y = 0;
     this->z = 0;
-    this->name = "a";
+    this->name = "";
 };
 
 MyLog::MyLog(Level level)

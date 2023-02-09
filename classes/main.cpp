@@ -1,15 +1,14 @@
 #include <iostream>
-#include "mylog.h"
+#include "classes/mylog.h"
 
 void start()
 {
     MyLog mylog;
+    MyLog m( MyLog::LOG_ERROR  );
 
     mylog.x = 1;
     mylog.y = 2;
-    mylog.name = "First";
-
-    MyLog m( MyLog::LOG_ERROR  );
+    mylog.name = "First";    
 
     m.x = 10;
     m.y = 20;
