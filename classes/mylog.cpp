@@ -1,46 +1,41 @@
-// #include <iostream>
+#include <iostream>
+#include "mylog.h"
 
-// class MyLog
+
+MyLog::MyLog()
+{
+    this->errorLevel = Level::LOG_DEBUG;
+    this->x = 0;
+    this->y = 0;
+    this->z = 0;
+    this->name = "a";
+};
+
+MyLog::MyLog(Level level)
+{
+    this->errorLevel = level;
+    this->x = 0;
+    this->y = 0;
+    this->z = 0;
+    this->name = "";
+};
+
+// MyLog::~MyLog()
 // {
-
-// public:
-//     int x, y, z;
-//     enum Level
-//     {
-//         LOG_ERROR = 0,
-//         LOG_WARN,
-//         LOG_INFO,
-//         LOG_DEBUG
-//     };
-
-// private:
-//     Level errorLevel;
-
-// public:
-//     MyLog(Level level = LOG_INFO)
-//     {
-//         this->errorLevel = level;
-//         this->x = 0;
-//         this->y = 0;
-//         this->z = 0;
-//     };
-//     ~MyLog()
-//     {
-//         std::cout << "MyLog ended" << std::endl;
-//     };
-
-//     void SetLevel(Level level)
-//     {
-//         this->errorLevel = level;
-//     }
-
-//     Level GetLevel()
-//     {
-//         return errorLevel;
-//     }
-
-//     void print()
-//     {
-//         std::cout << x << " " << y << std::endl;
-//     }
+//     std::cout << "MyLog ended" << std::endl;
 // };
+
+void MyLog::SetLevel(Level level)
+{
+    this->errorLevel = level;
+}
+
+MyLog::Level MyLog::GetLevel()
+{
+    return errorLevel;
+}
+
+void MyLog::print()
+{
+    std::cout << "Name:" << this->name << " x:" << this->x << " y:" << this->y << " level:" << this->errorLevel << std::endl;
+}

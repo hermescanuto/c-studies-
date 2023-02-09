@@ -1,5 +1,5 @@
 #include <iostream>
-#include "mylog.hpp"
+#include "mylog.h"
 
 void start()
 {
@@ -7,9 +7,16 @@ void start()
 
     mylog.x = 1;
     mylog.y = 2;
+    mylog.name = "First";
+
+    MyLog m( MyLog::LOG_ERROR  );
+
+    m.x = 10;
+    m.y = 20;
+    m.name = "Second";
 
     mylog.print();
-    std::cout << "Level:" << mylog.GetLevel() << std::endl;
+    m.print();
 }
 
 int main()
